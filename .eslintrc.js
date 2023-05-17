@@ -18,7 +18,7 @@ module.exports = {
             }
         ],
         indent: ["error", 4],
-        quotes: ["error", "single"],
+        quotes: ["error", "double"],
         "comma-dangle": ["error", "never"],
         semi: ["error", "never"],
         "no-underscore-dangle": ["error", { allow: [] }],

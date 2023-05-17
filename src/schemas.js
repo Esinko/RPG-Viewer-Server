@@ -1,7 +1,7 @@
-const { ObjectId } = require('mongodb')
-const { model, Schema } = require('mongoose')
+const { ObjectId } = require("mongodb")
+const { model, Schema } = require("mongoose")
 
-const blueprintModel = model('blueprints', new Schema({
+const blueprintModel = model("blueprints", new Schema({
     name: String,
     type: Number,
     permissions: Array({
@@ -29,10 +29,10 @@ const blueprintModel = model('blueprints', new Schema({
     flickerAmount: Number,
     pulseInterval: Number,
     pulseAmount: Number,
-    image: ObjectId,
+    image: ObjectId
 }))
 
-const tokenModel = model('tokens', new Schema({
+const tokenModel = model("tokens", new Schema({
     name: String,
     type: Number,
     permissions: Array({
@@ -73,7 +73,7 @@ const tokenModel = model('tokens', new Schema({
     rotation: Number
 }))
 
-const sceneModel = model('scenes', new Schema({
+const sceneModel = model("scenes", new Schema({
     data: {
         image: ObjectId,
         name: String,
@@ -115,7 +115,8 @@ const sceneModel = model('scenes', new Schema({
         wallId: ObjectId,
         points: Array({
             _id: false,
-            x: Number, y: Number
+            x: Number,
+            y: Number
         }),
         model: Number,
         open: Boolean,
@@ -149,12 +150,12 @@ const sceneModel = model('scenes', new Schema({
             g: Number,
             b: Number,
             a: Number
-        },
+        }
     }),
     notes: Array(ObjectId)
 }))
 
-const sessionModel = model('sessions', new Schema({
+const sessionModel = model("sessions", new Schema({
     name: String,
     master: ObjectId,
     users: Array(ObjectId),
@@ -168,7 +169,7 @@ const sessionModel = model('sessions', new Schema({
     background: ObjectId
 }))
 
-const userModel = model('users', new Schema({
+const userModel = model("users", new Schema({
     email: String,
     name: String,
     password: String,
@@ -176,11 +177,11 @@ const userModel = model('users', new Schema({
     licences: Array(ObjectId)
 }))
 
-const fileModel = model('files', new Schema({
+const fileModel = model("files", new Schema({
     count: Number
 }))
 
-const noteModel = model('notes', new Schema({
+const noteModel = model("notes", new Schema({
     owner: ObjectId,
     header: String,
     text: String,
@@ -189,10 +190,10 @@ const noteModel = model('notes', new Schema({
     position: {
         x: Number,
         y: Number
-    },
+    }
 }))
 
-const journalModel = model('journals', new Schema({
+const journalModel = model("journals", new Schema({
     owner: ObjectId,
     header: String,
     text: String,
@@ -201,7 +202,7 @@ const journalModel = model('journals', new Schema({
         _id: false,
         user: ObjectId,
         isCollaborator: Boolean
-    }),
+    })
 }))
 
 module.exports = {
